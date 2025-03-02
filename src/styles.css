@@ -29,3 +29,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 300px;
     align-items: center;
 }
+
+.wrapper{
+    max-width: 80%;
+    margin: 30px auto;
+}

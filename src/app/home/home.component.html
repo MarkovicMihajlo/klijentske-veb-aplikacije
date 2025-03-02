@@ -12,7 +12,7 @@
         <img mat-card-image [src]="generateDestionationImage(flight.destination)" [alt]="flight.destination">
         <mat-card-content>
             <h1>{{flight.destination}}</h1>        
-            <p>Scheduled at: {{formatDate(flight.scheduledAt)}}</p>
+            <p>Scheduled at: {{utils.formatDate(flight.scheduledAt)}}</p>
             <p>Flight number: {{flight.flightNumber}}</p>
             <p>Plane mode: {{flight.plane}}</p>
         </mat-card-content>
