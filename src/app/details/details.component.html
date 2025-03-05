@@ -1,0 +1,28 @@
+<div class="wrapper" *ngIf="flight">
+    <!-- <img [src]="utils.generateDestionationImage(flight.destination)">
+    <pre>{{flight | json}}</pre> -->
+    <h1>{{flight.destination}}</h1>
+    <div class="flight-content">
+      <img [src]="utils.generateDestionationImage(flight.destination)" [alt]="flight.destination">
+      <mat-card class="details-card" appearance="outlined">
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item>{{flight.scheduledAt}}</mat-list-item>
+            <mat-list-item>{{flight.flightKey}}</mat-list-item>
+            <mat-list-item>{{flight.plane}}</mat-list-item>
+            <mat-list-item>{{flight.gate}}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>
+            <i class="fa-solid fa-cart-shopping"></i>Book Now
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <mat-card class="flight-map" appearance="outlined">
+      asdadwdasdwdawdw
+    </mat-card>
+</div>
+
+<app-loading *ngIf="!flight" />
