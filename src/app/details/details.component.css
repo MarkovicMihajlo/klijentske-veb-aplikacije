@@ -1,22 +1,21 @@
-/* .flight-card{
+.flight-card{
     width: 49%;
-    height: 650px;
-} */
+} 
 
 .flight-content{
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 10px;
     flex-direction: row;
+    margin-bottom: 30px;
 }
 
 .flight-content img{
-    max-width: 600px;
+    max-width: 620px;
 }
 
 .flight-map{
     width: auto;
-    width: 100%;
+    width: 95%;
     height: 100%;
 }

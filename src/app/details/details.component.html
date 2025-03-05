@@ -4,13 +4,14 @@
     <h1>{{flight.destination}}</h1>
     <div class="flight-content">
       <img [src]="utils.generateDestionationImage(flight.destination)" [alt]="flight.destination">
-      <mat-card class="details-card" appearance="outlined">
+      <mat-card class="flight-card" appearance="outlined">
         <mat-card-content>
+          <h3>Flight Details</h3>
           <mat-list role="list">
-            <mat-list-item>{{flight.scheduledAt}}</mat-list-item>
-            <mat-list-item>{{flight.flightKey}}</mat-list-item>
-            <mat-list-item>{{flight.plane}}</mat-list-item>
-            <mat-list-item>{{flight.gate}}</mat-list-item>
+            <mat-list-item>Scheduled At: {{utils.formatDate(flight.scheduledAt)}}</mat-list-item>
+            <mat-list-item>Flight Number: {{flight.flightNumber}}</mat-list-item>
+            <mat-list-item>Airplane model: {{flight.plane}}</mat-list-item>
+            <mat-list-item>Flight Type: {{flight.type.name}}</mat-list-item>
           </mat-list>
         </mat-card-content>
         <mat-card-actions>
@@ -20,9 +21,11 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    <mat-card class="flight-map" appearance="outlined">
-      asdadwdasdwdawdw
-    </mat-card>
+    <div class="flight-content">
+      <mat-card class="flight-map">
+        <iframe [src]="generateMapLink() | safe" height="600px"></iframe>
+      </mat-card>
+    </div>
 </div>
 
 <app-loading *ngIf="!flight" />
