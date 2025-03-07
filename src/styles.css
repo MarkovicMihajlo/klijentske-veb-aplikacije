@@ -34,3 +34,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     max-width: 80%;
     margin: 30px auto;
 }
+
+.auth-card{
+    max-width: 540px;
+    margin: 30px auto;
+}
+
+.full-width{
+    width: 100%;
+}
