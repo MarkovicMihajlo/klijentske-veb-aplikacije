@@ -49,4 +49,20 @@ export class UserService{
 
     }
 
+    static changePassword(newPassword : string) : boolean{
+    
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.password = newPassword
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+        
+        return false
+    
+    }
+
 }

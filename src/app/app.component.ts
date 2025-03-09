@@ -15,7 +15,7 @@ import { UserService } from '../services/user.service';
 export class AppComponent {
   
   title = 'klijentske-veb-aplikacije-2025';
-  public user = UserService.getActiveUser()
+  public service = UserService
 
   public constructor(private router : Router){}
 
