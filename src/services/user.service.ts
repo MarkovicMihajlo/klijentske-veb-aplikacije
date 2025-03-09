@@ -1,3 +1,4 @@
+import { OrderModel } from "../models/order.model"
 import { UserModel } from "../models/user.model"
 
 export class UserService{
@@ -46,6 +47,22 @@ export class UserService{
         }
 
         return null
+
+    }
+
+    static createOrder(order: OrderModel){
+
+        const arr = this.retrieveUsers()
+
+        for(let user of arr){
+            if(user.email == localStorage.getItem('active')){
+                user.orders.push(order)
+                localStorage.setItem('users', JSON.stringify(arr))
+                return true
+            }
+        }
+        
+        return false
 
     }
 

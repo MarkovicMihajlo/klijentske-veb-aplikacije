@@ -6,7 +6,7 @@ export interface OrderModel{
     airline : AirlineModel
     destination : string
     count : number
-    pricePerItem : string
+    pricePerItem : number
     status : 'ordered' | 'paid' | 'canceled',
     rating : null | boolean
 }
