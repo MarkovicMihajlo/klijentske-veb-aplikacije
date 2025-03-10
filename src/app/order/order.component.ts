@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FlightModel } from '../../models/flight.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FlightService } from '../../services/flight.service';
 import { UtilsService } from '../../services/utils.service';
 import { MatCardModule } from '@angular/material/card';
@@ -28,7 +28,7 @@ export class OrderComponent {
   public selectedTicketCount: number = 1
   public selectedPrice : number = 150
 
-    public constructor (private route : ActivatedRoute, public utils: UtilsService){
+    public constructor (private route : ActivatedRoute, public utils: UtilsService, private router: Router){
       route.params.subscribe(params=>{
         FlightService.getFlightById(params['id']).then(rsp =>{
           this.flight = rsp.data
@@ -48,6 +48,8 @@ export class OrderComponent {
         status: 'ordered',
         rating: null
       })
+
+      result ? this.router.navigate(['/user']) : alert('An error occured while creating an order')
 
     }
 
