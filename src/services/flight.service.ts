@@ -32,4 +32,8 @@ export class FlightService{
         return client.get(`/flight/${id}`)
     }
 
+    static async getDestinations(){
+        return client.get('/flight/destination')
+    }
+
 }
