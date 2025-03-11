@@ -9,9 +9,12 @@
             <button mat-button (click)="doChangePassword()"><i class="fa-solid fa-key"></i> Change password</button>
         </mat-card-actions>
       </mat-card>
-    <div *ngIf="user.orders.length == 0">
-        <p>Nema ordera</p>
-    </div>
+      <mat-card appearance="outlined" *ngIf="user.orders.length == 0" class="no-order">
+        <mat-card-content>
+          <h1>You have no orders yet!</h1>
+          <p>To place an order visit the <a routerLink="/search" class="cyan">Search</a> page</p>
+        </mat-card-content>
+      </mat-card>
     <div *ngIf="user.orders.length > 0">
         <div *ngIf="user.orders">
             <h1>Order List</h1>

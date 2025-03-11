@@ -10,3 +10,9 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.no-order{
+    width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
